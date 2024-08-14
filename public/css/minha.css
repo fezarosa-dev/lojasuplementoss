@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+.containertopo{
+    display: grid;
+    place-items: center;
+   background-color: black;
+}
+
+
+#suplementos{
+    text-align: center;
+}
+
+.produto1, .produto2, .produto3, .produto4, .produto5 {
+    padding: 20px;
+    display: inline-block;
+}
+
+.suplementos{
+    background-color: #fff;
+}
+
+.fundoprincipal{
+    background-color: antiquewhite;
+}
+
+.titulocamelo{
+    text-align: center;
+}
+
+.fundoazul{
+    background-color:#fff;
+}
+.hover-image{
+    mix-blend-mode: multiply;
+}
+.hover-image {
+    transition: transform 0.3s; /* Suaviza a transição */
+}
+
+.hover-image:hover {
+    transform: scale(1.5); /* Aumenta a imagem em 1.5 vezes o tamanho original */
+}
+.texto{
+    color: #004AAD;
+    text-decoration: none;
+}
+.textoover{
+    color: #004AAD;
+    text-decoration: none;
+    max-width: 300px; 
+    word-wrap: break-word; 
+    mix-blend-mode: darken; 
+}

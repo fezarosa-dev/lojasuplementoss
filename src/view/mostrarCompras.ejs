@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CARRINHO</title>
+  <style>
+    * {
+      pointer-events: none;
+    }
+
+    a {
+      pointer-events: all;
+    }
+  </style>
+</head>
+
+<body bgcolor="lightblue">
+  <h1>Seus produtos adicionados!</h1>
+
+  <% for (let i = 0; i < adicionado.length; i++) { %>
+    <p>Nome: <%= adicionado[i].nome %> <br /></p>
+    <p>Preço total: R$ <%= (adicionado[i].preco * adicionado[i].qtd).toFixed(2) %></p>
+    <p>Preço unitário: R$ <%= adicionado[i].preco.toFixed(2) %></p>
+    <p>Quantidade: <%= adicionado[i].qtd %></p>
+    <p>Descrição: <%= adicionado[i].dsc %></p>
+    <a href="/remover/<%= i %>"><input type="button" value="Remover" /></a>
+  <% } %>
+  
+  <% if (adicionado.length > 0) { %>
+    <h3>
+      Valor total da compra: R$ <%= adicionado
+        .map(a => a.preco * a.qtd)
+        .reduce((acc, cur) => acc + cur, 0)
+        .toFixed(2) %>
+    </h3>
+  <% } else { %>
+    <h3>Não tem nada no seu carrinho! Adicione alguma coisa</h3>
+  <% } %>
+</body>
+
+</html>
